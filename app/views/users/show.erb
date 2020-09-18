@@ -1,0 +1,42 @@
+<h1><%=@user.name%></h1>
+
+<h2>Posts</h2>
+
+<%@user.posts.each do |post| %>
+<p>
+<a href="/posts/<%=post.id%>"><%=post.title%></a>, with <%=post.claps.count%> claps
+</p>
+<%end%>
+
+<br>
+
+<h2>Claps from <%=@user.name%></h2>
+
+<%@user.claps.each do |clap| %>
+<p>
+<a href="/posts/<%=clap.post.id%>"> <%=clap.post.title%> </a>
+</p>
+<%end%>
+
+<br>
+
+<h2>Responses</h2>
+
+<%@user.responses.each do |response| %>
+<p>
+Made on <a href="/posts/<%=response.post.id%>"><%=response.post.title%></a>
+<p><%=response.content%></p>
+</p>
+<%end%>
+
+<br>
+
+<h2>Drafts</h2>
+
+<%@user.posts.each do |post| %>
+<p>
+<%if post.draft? == true %>
+<%=post.title%>
+<%end%>
+</p>
+<%end%>
