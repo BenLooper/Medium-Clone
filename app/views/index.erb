@@ -1,0 +1,7 @@
+<h1>Fake Medium</h1>
+
+<h2>Recent Posts</h2>
+
+<%@posts.each do |post|%>
+    <p> <a href="/"> <%=post.title%> </a> claps: <%=post.claps.count%> </p>
+<%end%>
