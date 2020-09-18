@@ -4,7 +4,11 @@
 
 <%@user.posts.each do |post| %>
 <p>
-<a href="/posts/<%=post.id%>"><%=post.title%></a>, with <%=post.claps.count%> claps
+    <a href="/posts/<%=post.id%>"><%=post.title%></a>, with <%=post.claps.count%> claps
+
+    <form action='/posts/<%=post.id%>/edit' method='get'>
+    <button type='submit'>Edit Post</button>
+    </form>
 </p>
 <%end%>
 
@@ -44,3 +48,4 @@ Made on <a href="/posts/<%=response.post.id%>"><%=response.post.title%></a>
 <form action='/' method='get'>
 <button type='submit'>Home</button>
 </form>
+
