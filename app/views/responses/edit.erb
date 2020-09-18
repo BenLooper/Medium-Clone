@@ -1,0 +1,12 @@
+<h1>Response to <a href="/posts/<%=@resp.post.id%>"><%=@resp.post.title%></a><h1>
+
+<form action="/responses/<%=@resp.id%>" method="post">
+
+    <input type="hidden" name="_method" value="patch">
+    <input type="text" name="resp[content]" value="<%=@resp.content%>">
+
+    <p>
+        <input type='submit' value='Publish Edited Response'>
+    </p>
+    
+</form>

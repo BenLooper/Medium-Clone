@@ -8,5 +8,4 @@ class UserController < Sinatra::Base
         erb :show
     end 
 
-    
 end 
