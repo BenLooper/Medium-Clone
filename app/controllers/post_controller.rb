@@ -10,5 +10,5 @@ class PostController < Sinatra::Base
         erb :show
     end 
 
-    
+
 end 
