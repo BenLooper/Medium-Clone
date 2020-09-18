@@ -10,5 +10,8 @@ class PostController < Sinatra::Base
         erb :show
     end 
 
+    get '/posts/:id/edit' do 
+        erb :edit
+    end 
 
 end 
