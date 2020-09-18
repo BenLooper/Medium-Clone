@@ -3,7 +3,7 @@ Post.destroy_all
 Clap.destroy_all
 Response.destroy_all
 
-
+ 
 #Users
 ben = User.create(name:"Ben",pass:"password")
 spooky = User.create(name:"Spooky",pass:"paw")

@@ -8,5 +8,9 @@ class ApplicationController < Sinatra::Base
         erb :index
     end 
 
-    
+    get '/:id' do 
+        @post = Post.find(params[:id])
+        erb :show
+    end 
+
 end 

@@ -1,0 +1,18 @@
+<h1> <%= @post.title %> </h1>
+
+<p>
+<%=@post.content%>
+</p>
+
+<br>
+
+<p>Written by <%=@post.user.name%> </p>
+
+<h3><%=@post.claps.count%> Claps</h3>
+
+<h3>Responses</h3>
+<%@post.responses.each do |response|%>
+    <p><%=response.user.name%></p>
+    <p><%=response.content%></p>
+<%end%>
+
