@@ -3,5 +3,5 @@
 <h2>Recent Posts</h2>
 
 <%@posts.each do |post|%>
-    <p> <a href="/<%=post.id%>"> <%=post.title%> </a> claps: <%=post.claps.count%> </p>
+    <p> <a href="/posts/<%=post.id%>"> <%=post.title%> </a> claps: <%=post.claps.count%> </p>
 <%end%>

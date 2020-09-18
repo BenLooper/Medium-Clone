@@ -6,13 +6,15 @@
 
 <br>
 
-<p>Written by <%=@post.user.name%> </p>
+<p>
+Written by <a href="/users/<%=@user.id%>"><%=@post.user.name%> </a>
+</p>
 
 <h3><%=@post.claps.count%> Claps</h3>
 
 <h3>Responses</h3>
 <%@post.responses.each do |response|%>
-    <p><%=response.user.name%></p>
+    <p><a href="/users/<%=response.user.id%>"> <%=response.user.name%> </a> </p>
     <p><%=response.content%></p>
 <%end%>
 
