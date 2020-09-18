@@ -18,7 +18,7 @@
 
 <%@user.claps.each do |clap| %>
 <p>
-<a href="/posts/<%=clap.post.id%>"> <%=clap.post.title%> </a>
+    <a href="/posts/<%=clap.post.id%>"> <%=clap.post.title%> </a>
 </p>
 <%end%>
 
@@ -28,8 +28,14 @@
 
 <%@user.responses.each do |response| %>
 <p>
-Made on <a href="/posts/<%=response.post.id%>"><%=response.post.title%></a>
-<p><%=response.content%></p>
+
+    Made on <a href="/posts/<%=response.post.id%>"><%=response.post.title%></a>
+
+    <p><%=response.content%></p>
+
+    <form action='/responses/<%=response.id%>/edit' method='get'>
+    <button type='submit'>Edit Response</button>
+    </form>
 </p>
 <%end%>
 
@@ -37,11 +43,13 @@ Made on <a href="/posts/<%=response.post.id%>"><%=response.post.title%></a>
 
 <h2>Drafts</h2>
 
+<br> 
+
 <%@user.posts.each do |post| %>
 <p>
-<%if post.draft? == true %>
-<%=post.title%>
-<%end%>
+    <%if post.draft? == true %>
+    <%=post.title%>
+    <%end%>
 </p>
 <%end%>
 
